@@ -1,0 +1,34 @@
+﻿@page
+@model Práctica1.Pages.Programa4Model
+@{
+}
+<h3>Números ordenados</h3>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr>
+            @foreach (var numero in Model.numeros_ordenados)
+            {
+                <td>@numero</td>
+            }
+        </tr>
+    </table>
+</div>
+
+<h3>Números al Azar</h3>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr>
+            @foreach (var numero in Model.numeros_azar)
+            {
+                <td>@numero</td>
+            }
+        </tr>
+    </table>
+</div>
+
+<p>Suma: @Model.suma</p>
+<p>Promedio: @Model.promedio</p>
+<p>Moda: @Model.moda</p>
+<p>Mediana: @Model.mediana</p>

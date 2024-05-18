@@ -1,0 +1,37 @@
+﻿@page
+@model Práctica1.Pages.JulioCesarModel
+@{
+}
+
+<h3>Cifrado César</h3>
+
+<form method="post">
+    <div>
+        <label for="TextoEntrada">Texto a codificar/decodificar:</label>
+        <input type="text" id="TextoEntrada" asp-for="TextoEntrada" />
+    </div>
+    <div>
+        <label for="Desplazamiento">Desplazamiento (n):</label>
+        <input type="number" id="Desplazamiento" asp-for="Desplazamiento" />
+    </div>
+    <div>
+        <button type="submit" name="action" value="Codificar">Codificar</button>
+        <button type="submit" name="action" value="Decodificar">Decodificar</button>
+    </div>
+</form>
+
+@if (Model.TextoCodificado != null)
+{
+    <div>
+        <h3>Texto Codificado:</h3>
+        <p>@Model.TextoCodificado</p>
+    </div>
+}
+
+@if (Model.TextoDecodificado != null)
+{
+    <div>
+        <h3>Texto Decodificado:</h3>
+        <p>@Model.TextoDecodificado</p>
+    </div>
+}

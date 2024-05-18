@@ -1,0 +1,39 @@
+﻿@page
+@model Práctica1.Pages.Programa3Model
+@{
+}
+<h3>Evaluación de la Expresión (ax + by)^n</h3>
+
+<form method="post">
+    <div>
+        <label for="A">a:</label>
+        <input type="number" step="0.01" id="A" asp-for="A" />
+    </div>
+    <div>
+        <label for="B">b:</label>
+        <input type="number" step="0.01" id="B" asp-for="B" />
+    </div>
+    <div>
+        <label for="X">x:</label>
+        <input type="number" step="0.01" id="X" asp-for="X" />
+    </div>
+    <div>
+        <label for="Y">y:</label>
+        <input type="number" step="0.01" id="Y" asp-for="Y" />
+    </div>
+    <div>
+        <label for="N">n:</label>
+        <input type="number" id="N" asp-for="N" />
+    </div>
+    <div>
+        <button type="submit" asp-page-handler="Calcular">Calcular</button>
+    </div>
+</form>
+
+@if (Model.Resultado != 0)
+{
+    <div>
+        <h3>Resultado:</h3>
+        <p>@Model.Resultado</p>
+    </div>
+}

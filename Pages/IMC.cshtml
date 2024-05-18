@@ -1,0 +1,45 @@
+﻿@page
+@model Práctica1.Pages.IMCModel
+@{
+}
+<h3>Calcular el Índice de Masa Corporal</h3>
+<form method="post">
+    <p>Peso en kilogramos: <input type="number" step="0.01" asp-for="peso" /></p>
+    <p>Altura en metros: <input type="number" step="0.01" asp-for="altura" /></p>
+    <p><input type="submit" value="Calcular" /></p>
+
+    @if (Model.imc != 0)
+    {
+        <div>
+            <p>Índice de Masa Corporal = <b>@Model.imc</b></p>
+            <p>Tú tienes: <b>@Model.clasificacion</b></p>
+
+            <div>
+                @if (Model.clasificacion == "Peso Bajo")
+                {
+                    <img src="~/images/subir_de_peso.png" alt="Peso Bajo" />
+                }
+                else if (Model.clasificacion == "Peso Normal")
+                {
+                    <img src="~/images/dejar_tu_peso.png" alt="Peso Normal" />
+                }
+                else if (Model.clasificacion == "Sobrepeso")
+                {
+                    <img src="~/images/sobrepeso.png" alt="Sobrepeso" />
+                }
+                else if (Model.clasificacion == "Obesidad grado I")
+                {
+                    <img src="~/images/obesidad_I.png" alt="Obesidad grado I" />
+                }
+                else if (Model.clasificacion == "Obesidad grado II")
+                {
+                    <img src="~/images/obesidad_II.png" alt="Obesidad grado II" />
+                }
+                else if (Model.clasificacion == "Obesidad grado III")
+                {
+                    <img src="~/images/obesidad_III.png" alt="Obesidad grado III" />
+                }
+            </div>
+        </div>
+    }
+</form>
